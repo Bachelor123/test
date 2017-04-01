@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.bigbox{
+    padding-bottom: 100%;
+}
+.box{
+    width: 30%;
+    padding-bottom: 30%;
+    margin: 2.5% 0% 0% 2.5%;
+    float:left;
+    background: orange;
+    border-radius: 15px;
+}
