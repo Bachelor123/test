@@ -1,0 +1,341 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "microsoft Yahei",arial, Tahoma, Helvetica, simsun,  sans-serif;
+    color: #333;
+    font-size: 12px;
+    line-height: 24px;
+    width: 100%;
+    min-width: 320px;
+}
+.f18{
+    font-size: 18px;
+}
+.f17{
+    font-size: 17px;
+}
+p,span,s,a,img,div{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+img{
+    width: 100%;
+    vertical-align: middle;
+}
+.tof{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+header{
+    width: 100%;
+}
+.clear:after{
+    content: ' ';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.border:after{
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid #e6e6e6;
+    transform-origin: 0 100%;
+    transform:scaleY(.5);
+}
+.top{
+    height: 44px;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+.logo{
+    display: block;
+    width: 74px;
+    float: left;
+    height: 24px;
+    margin-left: 15px;
+}
+.icon{
+    display: block;
+    height: 24px;
+    width: 20px;
+    float: right;
+    margin-right: 15px;
+    padding-top: 4px;
+    box-sizing: border-box;
+}
+.icon span{
+    width: 20px;
+    height: 2px;
+    display: block;
+    margin-bottom: 5px;
+    background: #fab600;
+}
+.banner{
+    display: block;
+    position: relative;
+}
+.banner img{
+    height: 160px;
+    width: 100%;
+}
+.txt{
+    height: 40px;
+    line-height: 40px;
+    color: #FFFFFF;
+    padding-left: 15px;
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+}
+.dot{
+    position: absolute;
+    right: 10px;
+    bottom: 3px;
+    z-index: 3;
+}
+.dot span{
+    background: #FFFFFF;
+    margin-left: 5px;
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 4px;
+    opacity: .2;
+}
+.dot .show{
+    opacity: 1;
+}
+.blank{
+    height: 10px;
+    width: 100%;
+    background-color: #f2f2f0;
+}
+.section{
+    padding: 0 15px;
+    display: block;
+}
+.sec_l{
+    height: 48px;
+    line-height: 48px;
+    float: left;
+}
+.sec_l span{
+    display: inline-block;
+    width: 3px;
+    height: 17px;
+    background: #fab600;
+    margin-right: 9px;
+    vertical-align: -1px;
+}
+.sec_r{
+    height: 48px;
+    line-height: 48px;
+    font-size: 13px;
+    color: #ababab;
+    float: right;
+}
+.sec_r span{
+    display: inline-block;
+    width: 5px;
+    height: 10px;
+    margin-left: 10px;
+    background: url("../img/ico2.png") no-repeat;
+    background-size: 100% 100%;
+}
+.news{
+    padding: 10px 15px 10px 0;
+    position: relative;
+}
+.news_tit{
+    display: block;
+    padding-left: 15px;
+    line-height: 20px;
+    font-size: 16px;
+}
+.news_con{
+    font-size: 14px;
+    line-height: 18px;
+    color: #999;
+    margin-top: 5px;
+    padding-left: 15px;
+}
+.ad{
+    display: block;
+}
+.ad img{
+    width: 100%;
+}
+.link_pic{
+    display: block;
+    width: 100px;
+    height: 65px;
+    float: right;
+    margin-top: 5px;
+}
+.link_pic img{
+    width: 100%;
+    height: 100%;
+}
+.new_tit{
+    height: 48px;
+    line-height: 24px;
+    display: block;
+    padding-left: 15px;
+    font-size: 16px;
+}
+.new_con{
+    line-height: 18px;
+    font-size: 14px;
+    color: #999;
+    margin-top: 5px;
+    padding-left: 15px;
+}
+.wrap_tit{
+     display: flex;
+     justify-content: space-around;
+     width: 100%;
+ }
+.wrap_tit a{
+    display: block;
+    text-align: center;
+    font-size: 19px;
+    width:33.33%;
+    height: 39px;
+    line-height: 39px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e6e6e6;
+}
+.wrap_tit .show_tit{
+    border-bottom: 2px solid #ff7800;
+    color: #ff7800;
+}
+.wrap_con{
+    height: 270px;
+    overflow-y:auto;
+}
+.inner_box{
+    display: flex;
+    text-align: center;
+    border-bottom: 1px solid #e6e6e6;
+}
+.inner_tit{
+    width: 25%;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inner_tit a{
+    font-size: 14px;
+    color: #ff7000;
+    line-height: 20px;
+    display: block;
+}
+.inner_con{
+    width: 25%;
+    padding: 10px 0;
+    text-align: left;
+}
+.inner_con a{
+    display: block;
+    color: #666;
+    font-size: 14px;
+    line-height: 20px;
+}
+.wrap_bot{
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-top:1px solid #e6e6e6;
+    box-shadow: 1px -1px 3px 0 rgba(0,0,0,.15);
+    background: #FFFFFF;
+}
+.wrap_bot i{
+    display: inline-block;
+    width: 10px;
+    height: 5px;
+    background:url("../img/ico_tab.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+
+footer{
+    background: #FFFFFF;
+    /*margin-top: 10px;*/
+    width: 100%;
+}
+.foot_box{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 20px;
+}
+.f_box{
+    display: block;
+    width: 54px;
+}
+.f_icon{
+    width: 44px;
+    height: 44px;
+    margin:0 auto;
+}
+.f_font{
+    text-align: center;
+    font-size: 13px;
+    margin-top: 8px;
+}
+.f_icon1{
+    background: url("../img/ico_bot.png") 0 -88px no-repeat;
+    background-size: 50px 371px;
+}
+.f_icon2{
+    background: url("../img/ico_bot.png") 0 -132px no-repeat;
+    background-size: 50px 371px;
+}
+.f_icon3{
+    background: url("../img/ico_bot.png") 0 -44px no-repeat;
+    background-size: 50px 371px;
+}
+.f_icon4{
+    background: url("../img/ico_bot.png") 0 0 no-repeat;
+    background-size: 50px 371px;
+}
+.foot_down{
+    padding: 20px 0 18px 0;
+    background: #F1F3F5;
+    box-sizing: border-box;
+}
+.bot_link{
+    display: flex;
+    width: 100%;
+}
+.bot_link a{
+    display: block;
+    width: 33.33%;
+    text-align: center;
+    color: #999999;
+    height: 13px;
+    line-height: 13px;
+}
+.mid_link{
+    border-right: 1px solid #e6e6e6;
+    border-left: 1px solid #e6e6e6;
+}
+.foot_down p{
+    color: #ababab;
+    text-align: center;
+    font-size: 11px;
+}
