@@ -185,8 +185,10 @@ nav{
 .percent{
     font-size: 60px;
     line-height: 60px;
+    height: 60px;
     color: #f77b00;
     margin-top: 30px;
+    box-sizing: border-box;
 }
 .percent span{
     font-size: 16px;
@@ -224,6 +226,7 @@ nav{
     font-size: 10px;
     line-height: 15px;
     color: #FFFFFF;
+    display: block;
 }
 .ad{
     display: block;
@@ -261,6 +264,7 @@ footer{
     text-align: center;
     font-size: 13px;
     margin-top: 8px;
+    color: #212121;
 }
 .f_icon1{
     background: url("../img/ico_bot.png") 0 -88px no-repeat;
