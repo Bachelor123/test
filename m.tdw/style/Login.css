@@ -87,7 +87,7 @@ main{
 }
 .m_body i{
     height: 17px;
-    width: 12px;
+    width: 13px;
     /*background: pink;*/
     display: block;
     position: absolute;
@@ -99,7 +99,7 @@ main{
     background-size: 126px 17px;
 }
 .lock{
-    background: url("../img/log.sprite.png") -31.3px 0 no-repeat;
+    background: url("../img/log.sprite.png") -31px 0 no-repeat;
     background-size: 126px 17px;
 }
 .m_body input{
