@@ -6,7 +6,7 @@ body{
     font-size: 12px;
     line-height: 24px;
     width: 100%;
-    min-width: 400px;
+    min-width: 360px;
     box-sizing: border-box;
 }
 .f20{
@@ -277,8 +277,8 @@ footer{
     line-height: 13px;
 }
 .mid_link{
-    border-right: 1px solid #e6e6e6;
-    border-left: 1px solid #e6e6e6;
+    border-right: 1px solid #ababab;
+    border-left: 1px solid #ababab;
 }
 .foot_down p{
     color: #ababab;
