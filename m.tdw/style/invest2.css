@@ -58,7 +58,6 @@ header{
     height: 48px;
     background-color: #fed636;
     padding: 0 10px;
-    opacity: 0.95;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -301,6 +300,7 @@ footer{
     text-align: center;
     font-size: 13px;
     margin-top: 8px;
+    color: #212121;
 }
 .f_icon1{
     background: url("../img/ico_bot.png") 0 -88px no-repeat;
