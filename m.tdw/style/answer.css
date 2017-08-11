@@ -1,0 +1,314 @@
+body{
+    margin: 0;
+    padding: 44px 0 0 0;
+    font-size: 14px;
+    line-height: 160%;
+    color: #333;
+    background: #f2f2f2;
+    font-family: "microsoft Yahei", arial, Tahoma, Helvetica, simsun, sans-serif;
+    min-width: 320px;
+}
+a{
+    text-decoration: none;
+    color: #666;
+}
+p,span,s,a,img,div,h3,ul,li,input{
+    margin: 0;
+    padding: 0;
+}
+.clear{
+    height: 0;
+    clear: both;
+}
+header{
+    height: 44px;
+    background: url("../img/nav_bg.png") repeat-x 0 0;
+    background-size: 43px 44px ;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}
+.head{
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 20px;
+    line-height: 44px;
+}
+.logo{
+    display: block;
+    width: 60px;
+    height: 22px;
+    float: left;
+    margin: 11px 0 0 10px;
+    background: url("../img/home.png") no-repeat;
+    background-size: 60px 21px;
+}
+.menu{
+    display: block;
+    width: 21px;
+    height: 13px;
+    float: right;
+    margin: 15px 16px 0 0;
+    background: url("../img/menu.png") no-repeat;
+    background-size: 21px 13px;
+}
+.search{
+    margin: 10px 0;
+}
+.search_input{
+    margin: 0 10px 0 10px;
+    height: 48px;
+    padding: 0 70px 0 43px;
+    border: 1px solid #e2e2e5;
+    background: url("../img/search_ico.png") 8px 13px no-repeat #FFFFFF;
+    background-size: 28px 27px;
+    border-radius:3px;
+    position: relative;
+}
+.ad{
+    display: block;
+}
+.ad img{
+    height: 60px;
+    width: 100%;
+}
+.txt{
+    width: 100%;
+    font-size: 14px;
+    height: 47px;
+    border: 0;
+    outline: none;
+    padding: 1px 0;
+    box-sizing: border-box;
+}
+.sch_btn{
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    padding: 0 9px 3px;
+    height: 50px;
+    background-color: #ffae2c;
+    color: #FFFFFF;
+    text-align: center;
+    border: 0;
+    border-bottom: 1px solid #ffae2c;
+    font-size: 18px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.search ul{
+    list-style-type: none;
+    padding-left: 15px;
+    margin-top: 5px;
+    line-height: 30px;
+}
+.search .hot{
+    color: red;
+    font-size: 14px;
+    margin-right: 6px;
+}
+.search li{
+    float: left;
+    margin-right: 4px;
+}
+.btn{
+    display: block;
+    margin: 10px 10px 0 10px;
+    line-height: 39px;
+    height: 43px;
+    font-size: 18px ;
+    color: #FFFFFF;
+    border: 0;
+    text-align: center;
+    border-bottom:2px solid #ffae2c ;
+    background: #ffae2c;
+    border-radius:3px;
+    padding: 1px 6px;
+    box-sizing: border-box;
+}
+.main{
+    margin: 0 10px;
+    border-bottom: 2px solid #e3e4e8;
+    background: #FFFFFF;
+    border-radius: 3px;
+}
+.main h3{
+    font-weight: normal;
+    height: 24px;
+    padding: 5px 0 5px 10px ;
+    margin-bottom: 8px;
+    border-bottom: 2px solid #ffae2c;
+}
+.main ul{
+    padding: 0 10px;
+    list-style-type: none;
+}
+.main li{
+    background: url("../img/lidot.gif") no-repeat 1px 10px transparent;
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+    padding-left: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.main li span a{
+    float: right;
+    color: #999;
+    font-size: 12px;
+}
+.all_anw{
+    display: block;
+    margin: 0 10px 18px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 12px;
+    text-align: center;
+    background: #f2f2f2;
+}
+.blank{
+    height: 10px;
+    background: #f2f2f0;
+}
+
+.wrap_tit{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #FFFFFF;
+}
+.wrap_tit a{
+    display: block;
+    text-align: center;
+    font-size: 19px;
+    width:33.33%;
+    height: 39px;
+    line-height: 39px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e6e6e6;
+}
+.wrap_tit .show_tit{
+    border-bottom: 2px solid #ff7800;
+    color: #ff7800;
+}
+.wrap_con{
+    height: 270px;
+    overflow-y:auto;
+    background-color: #FFFFFF;
+}
+.inner_box{
+    display: flex;
+    text-align: center;
+    border-bottom: 1px solid #e6e6e6;
+}
+.inner_tit{
+    width: 25%;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inner_tit a{
+    font-size: 14px;
+    color: #ff7000;
+    line-height: 20px;
+    display: block;
+}
+.inner_con{
+    width: 25%;
+    padding: 10px 0;
+    text-align: left;
+}
+.inner_con a{
+    display: block;
+    color: #666;
+    font-size: 14px;
+    line-height: 20px;
+}
+.wrap_bot{
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-top:1px solid #e6e6e6;
+    box-shadow: 1px -1px 3px 0 rgba(0,0,0,.15);
+    background: #FFFFFF;
+}
+.wrap_bot i{
+    display: inline-block;
+    width: 10px;
+    height: 5px;
+    background:url("../img/ico_tab.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+
+footer{
+    background: #f2f2f0;
+    /*margin-top: 10px;*/
+    width: 100%;
+}
+.foot_box{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-top: 17px;
+    padding-bottom: 20px;
+}
+.f_box{
+    display: block;
+    width: 54px;
+}
+.f_icon{
+    width: 44px;
+    height: 44px;
+    margin:0 auto;
+}
+.f_font{
+    text-align: center;
+    font-size: 13px;
+    margin-top: 8px;
+}
+.f_icon1{
+    background: url("../img/ico_bot.png") 0 -88px no-repeat;
+    background-size: 50px 371px;
+}
+.f_icon2{
+    background: url("../img/ico_bot.png") 0 -132px no-repeat;
+    background-size: 50px 371px;
+}
+.f_icon3{
+    background: url("../img/ico_bot.png") 0 -44px no-repeat;
+    background-size: 50px 371px;
+}
+.f_icon4{
+    background: url("../img/ico_bot.png") 0 0 no-repeat;
+    background-size: 50px 371px;
+}
+.foot_down{
+    padding: 20px 0 18px 0;
+    background: #F1F3F5;
+    box-sizing: border-box;
+}
+.bot_link{
+    display: flex;
+    width: 100%;
+}
+.bot_link a{
+    display: block;
+    width: 33.33%;
+    text-align: center;
+    color: #999999;
+    height: 13px;
+    line-height: 13px;
+}
+.mid_link{
+    border-right: 1px solid #ababab;
+    border-left: 1px solid #ababab;
+}
+.foot_down p{
+    color: #ababab;
+    text-align: center;
+    font-size: 11px;
+}

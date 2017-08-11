@@ -1,0 +1,353 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "microsoft Yahei",arial, Tahoma, Helvetica, simsun,  sans-serif;
+    color: #212121;
+    font-size: 12px;
+    line-height: 24px;
+    width: 100%;
+    min-width: 320px;
+}
+p,span,s,a,img,div{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+header{
+    height: 48px;
+    width: 100%;
+}
+.head{
+    background: #fde636;
+    width: 100%;
+    height: 48px;
+    padding: 0 10px;
+    opacity: .95;
+    box-sizing: border-box;
+}
+.logo{
+    display: block;
+    float: left;
+    width: 70px;
+    height: 22px;
+    margin: 12px 0 10px 0;
+    background: url("../img/logo%20(1).png") no-repeat;
+    background-size: 100% 100%;
+}
+.pc{
+    display: block;
+    width: 32px;
+    height: 48px;
+    background: url("../img/ico_pc.png") center center no-repeat;
+    background-size: 21px 18px;
+    float: right;
+}
+.icon{
+    display: block;
+    height: 48px;
+    width: 19px;
+    float: right;
+    margin-right: 5px;
+    padding-top: 16px;
+    margin-left: 20px;
+    box-sizing: border-box;
+}
+.icon span{
+    width: 19px;
+    height: 2px;
+    display: block;
+    margin-bottom: 5px;
+    background: #835310;
+}
+.banner{
+    width: 100%;
+}
+.banner img{
+    width: 100%;
+    vertical-align: middle;
+}
+.scroll{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background: #f9f1d6;
+    padding:0 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+.scroll a{
+    display: block;
+    color: #808080;
+}
+.scroll i{
+    width: 16px;
+    height: 15px;
+}
+.scroll img{
+    width: 16px;
+    height: 15px;
+    vertical-align: -3px;
+}
+.scroll p{
+    display: inline-block;
+}
+.scroll span{
+    color: #FD6040;
+}
+nav{
+    width: 100%;
+    background: #FFFFFF;
+    display: flex;
+}
+.nav{
+    width: 25%;
+    display: block;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    color: #212121;
+}
+.nav span{
+    display:inline-block;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    padding-top: 9px;
+    margin-bottom: 7px;
+    box-sizing: border-box;
+}
+.nav img{
+    width: 26px;
+    height: 26px;
+}
+.nav3 img{
+    width: 19px;
+    height: 26px;
+}
+.nav4 img{
+    width: 30px;
+    height: 25px;
+}
+.nav1{
+    background: #ffcf1f;
+}
+.nav2{
+    background: #fe787d;
+}
+.nav3{
+    background: #4ac6ff;
+}
+.nav4{
+    background: #5fe15d;
+}
+.blank{
+    width: 100%;
+    height: 10px;
+    background-color:#f1f3f5;
+}
+.new_hand{
+    position: relative;
+    background: #FFFFFF;
+    width: 100%;
+    text-align: center;
+    padding-top: 27px;
+}
+.hot{
+    width: 77px;
+    height: 27px;
+    background: url("../img/ia_r1.png") no-repeat;
+    background-size: 77px 27px;
+    position: absolute;
+    top: -3px;
+    left: 10px;
+}
+.new_hand p{
+    font-size: 15px;
+    color: #212121;
+}
+.tag{
+    margin-top: 5px;
+}
+.tag span{
+    margin:0 4px ;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    color: #ffa200;
+    font-size: 10px;
+    border-radius: 20px;
+    border: 1px solid #ffa200;
+    padding: 0 10px;
+}
+.percent{
+    font-size: 60px;
+    line-height: 60px;
+    color: #f77b00;
+    margin-top: 30px;
+}
+.percent span{
+    font-size: 16px;
+}
+.detail{
+    margin-top: 26px;
+}
+.detail span{
+    font-size: 15px;
+    display: inline-block;
+    padding: 0 20px;
+    height: 14px;
+    line-height: 14px;
+    color: #212121;
+}
+.det_mid{
+    border-left: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+}
+.buy{
+    display: block;
+    width: 77.33%;
+    margin: 9px auto 16px;
+    padding: 6px 0 4px 0;
+    background-color: #ffcf1f;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.buy p{
+    font-size: 15px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+.buy span{
+    font-size: 10px;
+    line-height: 15px;
+    color: #FFFFFF;
+}
+.ad{
+    display: block;
+    width: 100%;
+}
+.ad img{
+    width: 100%;
+    height: 100%;
+    background: #F1F3F5;
+    vertical-align: middle;
+}
+
+
+footer{
+    background: #FFFFFF;
+    /*margin-top: 10px;*/
+    width: 100%;
+}
+.foot_box{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 20px;
+}
+.f_box{
+    display: block;
+    width: 44px;
+}
+.f_icon{
+    width: 44px;
+    height: 44px;
+}
+.f_font{
+    text-align: center;
+    font-size: 13px;
+    margin-top: 8px;
+}
+.f_icon1{
+    background: url("../img/ico_bot.png") 0 -88px no-repeat;
+    background-size: 50px 371px;
+}
+.f_icon2{
+    background: url("../img/ico_bot.png") 0 -132px no-repeat;
+    background-size: 50px 371px;
+}
+.f_icon3{
+    background: url("../img/ico_bot.png") 0 -44px no-repeat;
+    background-size: 50px 371px;
+}
+.f_icon4{
+    background: url("../img/ico_bot.png") 0 0 no-repeat;
+    background-size: 50px 371px;
+}
+.foot_down{
+    padding: 20px 0 74px 0;
+    background: #F1F3F5;
+    box-sizing: border-box;
+}
+.bot_link{
+    display: flex;
+    width: 100%;
+}
+.bot_link a{
+    display: block;
+    width: 33.33%;
+    text-align: center;
+    color: #999999;
+    height: 13px;
+    line-height: 13px;
+}
+.mid_link{
+    border-right: 1px solid #e6e6e6;
+    border-left: 1px solid #e6e6e6;
+}
+.foot_down p{
+    color: #ababab;
+    text-align: center;
+    font-size: 11px;
+}
+.fixed_bot{
+    width: 100%;
+    height: 49px;
+    position: fixed;
+    bottom: 0;
+    background: #f7f7f7;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+}
+.fixed_bot a{
+    display: block;
+    width: 33.33%;
+    text-align: center;
+    height: 49px;
+}
+.fixed_bot s{
+    padding-top: 4px;
+    width: 26px;
+    height: 26px;
+    display: inline-block;
+}
+.fixed_bot img{
+    width: 100%;
+    vertical-align: middle;
+}
+.fixed_bot p{
+    color: #626262;
+    line-height: 18px;
+    font-size: 10px;
+}
+.fixed_bot .Y{
+    color: #ffcf1f;
+}
+.red_packet{
+    display: block;
+    width: 54px;
+    height: 50px;
+    position: fixed;
+    bottom: 216px;
+    right: 15px;
+    z-index: 3;
+}
+.red_packet img{
+    width: 100%;
+    vertical-align: middle;
+}

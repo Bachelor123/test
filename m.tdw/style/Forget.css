@@ -1,0 +1,125 @@
+body{
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
+    background: #F6F7F8;
+    width: 100%;
+    height: 100%;
+    font-family: "Microsoft Yahei";
+    color: #212121;
+    font-size: 12px;
+    line-height: 24px;
+}
+input{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+.num{
+    margin-top: 15px;
+    padding-left: 112px;
+    height: 44px;
+    background: #FFFFFF;
+    position: relative;
+}
+.border:before{
+    content: ' ';
+    display: block;
+    height: 0;
+    border-bottom: 1px solid #e6e6e6;
+    transform:scaleY(.5);
+    transform-origin:0 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.border:after{
+    content: ' ';
+    display: block;
+    height: 0;
+    border-bottom: 1px solid #e6e6e6;
+    transform:scaleY(.5);
+    transform-origin:0 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.num span{
+    font-size: 17px;
+    position: absolute;
+    left: 15px;
+    top: 10px;
+}
+.num input{
+    border:none;
+    height: 44px;
+    outline: none;
+    font-size: 17px;
+}
+.send{
+    font-size: 13px;
+    height: 25px;
+    line-height: 25px;
+    width: 77px;
+    color: #fab600;
+    border: 1px solid #ffeab3;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 9px;
+    right: 20px;
+}
+.text{
+    /*width: 100%;*/
+    color: #999999;
+    text-align: right;
+    font-size: 13px;
+    padding-right: 15px;
+    margin-top:5px ;
+}
+.text a{
+    color: #fd6040;
+}
+.btn{
+    /*width: 100%;*/
+    margin:25px 15px 0;
+    box-sizing: border-box;
+    /*background-origin: content-box;*/
+    background: #ffcf1f;
+    color: #FFFFFF;
+    display: block;
+    /*margin-top: 25px;*/
+    height: 42px;
+    line-height: 42px;
+    border: 0;
+    border-radius:4px;
+    font-size: 16px;
+    text-align: center;
+}
+.contact{
+    color: #999;
+    text-align:center ;
+    font-size: 13px;
+    margin-top: 5px ;
+}
+.contact a{
+    color: #ff6600;
+}
+.fixed{
+    position: absolute;
+    right: 15px;
+    bottom: 20px;
+    z-index: 2;
+}
+.fixed a{
+    display: block;
+    width: 49px;
+    height: 49px;
+}
+.fixed img{
+    width: 100%;
+}
