@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        @keyframes A {
+           to{
+               transform: translateZ(100px);
+               background: rgba(68, 209, 255, 0.53);
+               opacity: 1;
+           }
+        }
+        @keyframes B {
+            to{
+                transform: translateZ(-100px);
+                background: rgba(255, 189, 235, 0.53);
+                opacity: 1;
+            }
+        }
+        @keyframes C {
+            to{
+                transform: translateX(100px) rotateY(90deg);
+                background: rgba(81, 215, 114, 0.53);
+                opacity: 1;
+            }
+        }
+        @keyframes D {
+            to{
+                transform: translateY(-100px) rotateX(-90deg);
+                background: rgba(255, 245, 48, 0.53);
+                opacity: 1;
+            }
+        }
+        @keyframes E {
+            to{
+                transform: translateX(-100px) rotateY(-90deg);
+                background: rgba(255, 47, 74, 0.53);
+                opacity: 1;
+            }
+        }
+        @keyframes F {
+            to{
+                transform: translateY(100px) rotateX(-90deg);
+                background: rgba(255, 115, 30, 0.53);
+                opacity: 1;
+            }
+        }
+        @keyframes G {
+            to{
+                transform:rotateX(-360deg)  rotateY(360deg);
+            }
+        }
+        .box{
+            width: 1000px;
+            height: 400px;
+            margin: 100px auto;
+            perspective: 500px;
+        }
+        .box .res{
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            margin:70px auto;
+            position: relative;
+            transform:rotateX(-30deg)  rotateY(30deg);
+            transform-style: preserve-3d;
+            transition:all 5s;
+
+        }
+
+        .res:hover{
+            transform:rotateX(-360deg)  rotateY(360deg);
+        }
+        .res>div{
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            font-size: 60px;
+            text-align: center;
+            opacity: 0;
+            transition:all .1s linear;
+        }
+        .n1{
+            animation: A 2s 2s 1 forwards;
+        }
+        .n2{
+            animation:B 2s 4s 1 forwards;
+        }
+        .n3{
+            animation: C 2s 6s 1 forwards;
+        }
+        .n4{
+            animation:D 2s 8s 1 forwards;
+        }
+        .n5{
+            animation:E 2s 10s 1 forwards;
+        }
+        .n6{
+            animation:F 2s 12s 1 forwards;
+        }
+        .res{
+            animation:G 5s 14s  alternate;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="res">
+        <div class="n1" >1</div>
+        <div class="n2" >2</div>
+        <div class="n3" >3</div>
+        <div class="n4" >4</div>
+        <div class="n5" >5</div>
+        <div class="n6" >6</div>
+    </div>
+</div>
+</body>
+</html>
