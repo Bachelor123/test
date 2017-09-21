@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title></title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100%;
+            height: 200px;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        ul,li{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        .ul1{
+            width: 600%;
+            height: 200px;
+            position: absolute;
+            left: 0;
+        }
+        .ul1 li{
+            width: 16.6666666666666666666666666666666%;
+            height: inherit;
+            float: left;
+        }
+        .ul1 img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul class="ul1">
+        <li><a href="#"><img src="img/45450-106.jpg"> </a> </li>
+        <li><a href="#"><img src="img/41097-106.jpg"> </a> </li>
+        <li><a href="#"><img src="img/41117-106.jpg"> </a> </li>
+        <li><a href="#"><img src="img/47243-106.jpg"> </a> </li>
+        <li><a href="#"><img src="img/45450-106.jpg"> </a> </li>
+        <li><a href="#"><img src="img/41097-106.jpg"> </a> </li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+    var oUl=document.querySelector('.ul1');
+    var oLl=document.querySelector('.ul1 li');
+    oLl.style.width=oUl.offsetWidth/oUl.children.length+'px';
+    oUl.style.left=-oUl.offsetWidth/oUl.children.length+'px';
+    var startX,startY,endX,endY;
+    var Value= 0,s= 0,x= 1;
+    var timer=null,timerOut1=null,timerOut2=null;
+    oUl.addEventListener('touchstart',function(ev){
+        startX=ev.touches[0].clientX;
+        startY=ev.touches[0].clientY;
+        clearInterval(timerOut1);
+        clearInterval(timerOut2);
+        clearInterval(timer);
+        if(x==0){
+            x=(oUl.children.length-2);
+            oUl.style.left=-(oUl.children.length-2)*oUl.offsetWidth/oUl.children.length+'px';
+        }
+        if(x==oUl.children.length-1){
+            x=1;
+            oUl.style.left=-oUl.offsetWidth/oUl.children.length+'px';
+        }
+    })
+    oUl.addEventListener('touchmove',function(ev){
+        Value=startX-ev.targetTouches[0].clientX;
+        oUl.style.left=-x*(oUl.offsetWidth/oUl.children.length)-Value+'px';
+    });
+    oUl.addEventListener('touchend',function(ev){
+        endX=ev.changedTouches[0].clientX;
+        endY=ev.changedTouches[0].clientY;
+        var ResultX=startX-endX;
+        if(Math.abs(ResultX)<100){
+            oUl.style.left=-x*(oUl.offsetWidth/oUl.children.length)+'px';
+        }
+        else if(Math.abs(ResultX)>=100){
+            s=oUl.offsetLeft;
+            if(ResultX<0){
+                x--;
+                timerOut1=setInterval(function(){
+                    s+=10;
+                    oUl.style.left=s+'px';
+                    if(s>=-x*(oUl.offsetWidth/oUl.children.length)){
+                        oUl.style.left=-x*(oUl.offsetWidth/oUl.children.length)+'px';
+                        if(x==0){
+                            x=oUl.children.length-2;
+                            oUl.style.left=-(oUl.children.length-2)*oUl.offsetWidth/oUl.children.length+'px';
+                        }
+                        clearInterval(timerOut1);
+                    }
+                },10)
+            }
+            else if(ResultX>0){
+                auto();
+            }
+        }
+        oTimer();
+    })
+    function auto(){
+        s=oUl.offsetLeft;
+        x++;
+        timerOut2=setInterval(function(){
+            s-=10;
+            oUl.style.left=s+'px';
+            if(s<=-x*(oUl.offsetWidth/oUl.children.length)){
+                oUl.style.left=-x*(oUl.offsetWidth/oUl.children.length)+'px';
+                if(x==oUl.children.length-1){
+                    x=1;
+                    oUl.style.left=-oUl.offsetWidth/oUl.children.length+'px';
+                }
+                clearInterval(timerOut2);
+            }
+        },10);
+        console.log(oUl.style.left);
+    }
+    function oTimer(){
+        timer=setInterval(function(){
+            auto();
+        },2000)
+    }
+   oTimer();
+</script>
