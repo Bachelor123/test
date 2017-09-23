@@ -54,17 +54,19 @@
 <script>
     var oUl=document.querySelector('.ul1');
     var oLl=document.querySelector('.ul1 li');
+    //获取每一张图片的宽度，以及设置ul的位置
     oLl.style.width=oUl.offsetWidth/oUl.children.length+'px';
     oUl.style.left=-oUl.offsetWidth/oUl.children.length+'px';
     var startX,startY,endX,endY;
     var Value= 0,s= 0,x= 1;
     var timer=null,timerOut1=null,timerOut2=null;
+    //触摸事件刚发生
     oUl.addEventListener('touchstart',function(ev){
-        startX=ev.touches[0].clientX;
+        startX=ev.touches[0].clientX;          //获取触摸事件发生的坐标
         startY=ev.touches[0].clientY;
-        clearInterval(timerOut1);
-        clearInterval(timerOut2);
-        clearInterval(timer);
+        clearInterval(timerOut1);        //左划定时器
+        clearInterval(timerOut2);          //右划定时器
+        clearInterval(timer);            //轮播定时器
         if(x==0){
             x=(oUl.children.length-2);
             oUl.style.left=-(oUl.children.length-2)*oUl.offsetWidth/oUl.children.length+'px';
@@ -74,41 +76,43 @@
             oUl.style.left=-oUl.offsetWidth/oUl.children.length+'px';
         }
     })
+    //在屏幕上滑动事件
     oUl.addEventListener('touchmove',function(ev){
-        Value=startX-ev.targetTouches[0].clientX;
-        oUl.style.left=-x*(oUl.offsetWidth/oUl.children.length)-Value+'px';
+        Value=startX-ev.targetTouches[0].clientX;         //获取整个滑动事件的距离
+        oUl.style.left=-x*(oUl.offsetWidth/oUl.children.length)-Value+'px';    //使滑动的时候，整个画布随滑动而移动
     });
+    //离开屏幕事件
     oUl.addEventListener('touchend',function(ev){
-        endX=ev.changedTouches[0].clientX;
+        endX=ev.changedTouches[0].clientX;         //获取离开屏幕的坐标
         endY=ev.changedTouches[0].clientY;
-        var ResultX=startX-endX;
-        if(Math.abs(ResultX)<100){
+        var ResultX=startX-endX;                    //获取从点击到离开
+        if(Math.abs(ResultX)<100){              //判断滑动的距离不大的话，图片不进行切换
             oUl.style.left=-x*(oUl.offsetWidth/oUl.children.length)+'px';
         }
-        else if(Math.abs(ResultX)>=100){
-            s=oUl.offsetLeft;
-            if(ResultX<0){
-                x--;
-                timerOut1=setInterval(function(){
+        else if(Math.abs(ResultX)>=100){    //图片切换的函数
+            s=oUl.offsetLeft;               //获取当前的画布距左边的距离
+            if(ResultX<0){                    //图片向左划的函数
+                x--;                         //x 是当前图片的索引值
+                timerOut1=setInterval(function(){          //图片向左滑定时器
                     s+=10;
-                    oUl.style.left=s+'px';
-                    if(s>=-x*(oUl.offsetWidth/oUl.children.length)){
+                    oUl.style.left=s+'px';             //整个画布的移动效果
+                    if(s>=-x*(oUl.offsetWidth/oUl.children.length)){         //判断画布是否到达位置
                         oUl.style.left=-x*(oUl.offsetWidth/oUl.children.length)+'px';
-                        if(x==0){
+                        if(x==0){         //如果图片是第一张的时候   整个画布直接跳到后面显示同一张图片
                             x=oUl.children.length-2;
                             oUl.style.left=-(oUl.children.length-2)*oUl.offsetWidth/oUl.children.length+'px';
                         }
-                        clearInterval(timerOut1);
+                        clearInterval(timerOut1);  //到达位置后  定时器清零
                     }
                 },10)
             }
-            else if(ResultX>0){
+            else if(ResultX>0){           //图片向右滑的函数
                 auto();
             }
         }
-        oTimer();
+        oTimer();    //滑动函数  结束后  执行自动轮播函数
     })
-    function auto(){
+    function auto(){    //图片右划函数   原理同左划函数一样
         s=oUl.offsetLeft;
         x++;
         timerOut2=setInterval(function(){
@@ -128,7 +132,30 @@
     function oTimer(){
         timer=setInterval(function(){
             auto();
+
         },2000)
     }
-   oTimer();
+
+    //  哈哈哈   重大更新：因为chrome和firefox中，时间较短的定时器会占用浏览器较大资源，所以他们会在页面
+    //   最小化或切换选项卡之后自动暂停定时器，而时间较大的定时器是不会被暂停的，所以我这个轮播的话，左右滑屏的定时器
+    //   它会自动暂停   而 自动轮播的定时器是不会被暂停的   所以先前的版本  在最小化重新打开的时候，会出现问题。
+
+    //检测页面是否   正在被浏览的函数
+    var hiddenProperty = 'hidden' in document ? 'hidden' :
+            'webkitHidden' in document ? 'webkitHidden' :
+                    'mozHidden' in document ? 'mozHidden' :
+                            null;
+    var visibilityChangeEvent = hiddenProperty.replace(/hidden/i, 'visibilitychange');
+    var onVisibilityChange = function(){
+        if (!document[hiddenProperty]) {
+            console.log('页面激活');
+            oTimer();
+        }else{
+            console.log('页面非激活');
+            clearInterval(timer);
+        }
+    }
+    document.addEventListener(visibilityChangeEvent, onVisibilityChange);
+    
+   oTimer();    //自动轮播函数
 </script>
