@@ -656,7 +656,7 @@
         var X = 0.27;
         document.onmousemove = function (ev) {
             var oEvent = ev || event;
-            var L = oEvent.clientX - oBar.offsetLeft;
+            var L = oEvent.clientX - oBar.offsetLeft-selector(".container").offsetLeft;
             if (L <= 50) {
                 L = 50;
             }
