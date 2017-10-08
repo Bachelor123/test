@@ -8,10 +8,16 @@
     <style>
         body {
             min-width: 1190px;
-            overflow: hidden;
+            overflow: auto;
         }
         p {
             margin: 0;
+        }
+        .container{
+            width: 1000px;
+            position: relative;
+            margin: 0 auto;
+            padding-top: 1px;
         }
         .info{
             margin-top: 60px;
@@ -161,9 +167,9 @@
         /*得分的正六边形*/
         .score {
             display: none;
-            position: fixed;
-            left: 90px;
-            top: 100px;
+            position: absolute;
+            left: 10px;
+            top: 180px;
             line-height: 50px;
         }
 
@@ -204,7 +210,7 @@
         .menu {
             display: none;
             position: absolute;
-            right: 30px;
+            right: -70px;
             top: 80px;
             -webkit-user-select: none;
             -moz-user-select: none;
@@ -218,21 +224,80 @@
             cursor: pointer;
         }
 
-        /*计时器*/
-        .timer {
+        /*时钟部分*/
+        .case {
+            height: 80px;
+            width: 200px;
+            text-align: center;
             position: absolute;
-            top: 3px;
-            left: 50%;
-            transform: translate(-50%, 0);
-            padding: 0 15px 5px;
+            top: 50px;
+            left: -80px;
+            transform-origin: 50% 50%;
+            transform: rotateX(-30deg) rotateY(-20deg);
+            transform-style: preserve-3d;
+            transition: all 2s;
             display: none;
+        }
+
+        .case > div {
+            width: 200px;
+            height: 80px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+            /*长发体两个正方形的面*/
+        .case .c, .case .d {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+        }
+           /*搭建一个长发体*/
+        .a {
+            transform: translateZ(-40px);
+            background-color: rgba(207, 29, 255, 0.5);
+        }
+
+        .b {
+            transform: translateZ(40px);
+            background-color: rgba(28, 27, 255, 0.5);
+        }
+
+        /*c、d为什么是移40px和60px，是因为定位的时候他们比父元素小，定位在父元素的左上角*/
+        .c {
+            transform: rotateY(-90deg) translateZ(40px);
+            background-color: rgba(31, 237, 255, 0.5);
+        }
+
+        .d {
+            transform: rotateY(90deg) translateZ(160px);
+            background-color: rgba(255, 234, 10, 0.5);
+        }
+
+        .e {
+            transform: rotateX(-90deg) translateZ(40px);
+            background-color: rgba(22, 255, 9, 0.5);
+        }
+
+        .f {
+            transform: rotateX(90deg) translateZ(40px);
+            background-color: rgba(255, 59, 0, 0.5);
+            color:#FFFFFF;
+        }
+        .f>i{
+            display: inline-block;
+            margin-top: 55px;
+        }
+            /*长方体里面的时钟*/
+        .timer {
+            line-height: 80px;
         }
 
         .timer > p {
             font-size: 25px;
             float: left;
             font-weight: bold;
-            margin: 8px 5px 0 0;
+            margin: 0 10px 0 12px;
             user-select: none;
         }
 
@@ -250,7 +315,7 @@
             border-radius: 3px;
             text-align: center;
             line-height: 37px;
-            margin-top: 10px;
+            margin-top: 23px;
             user-select: none;
         }
 
@@ -265,7 +330,7 @@
             color: #440106;
             font-size: 36px;
             position: absolute;
-            top: -24px;
+            top: -22px;
             left: -2px;
             user-select: none;
         }
@@ -274,7 +339,7 @@
         .tips {
             position: absolute;
             top: 165px;
-            right: 20px;
+            right: -70px;
             width: 200px;
             display: none;
             user-select: none;
@@ -303,7 +368,7 @@
             background: #FFFFFF;
             position: absolute;
             top: 300px;
-            right: 20px;
+            right: -70px;
             border-radius: 9px;
         }
 
@@ -337,68 +402,79 @@
     </style>
 </head>
 <body>
-<!--庄稼地和田鼠-->
-<div class="wrap">
-    <div class="ground">
-        <div class="pic"></div>
-        <div class="mouse">
-            <img src="img/mouse.png">
+<div class="container">
+    <!--庄稼地和田鼠-->
+    <div class="wrap">
+        <div class="ground">
+            <div class="pic"></div>
+            <div class="mouse">
+                <img src="img/mouse.png">
+            </div>
+            <div class="over">
+                <p>骚年~~ 你就得了<span class="num" style="color: #ff0c0b;">0</span>分！ 看来手速还得练啊！</p>
+                <img src="img/img.jpg">
+            </div>
         </div>
-        <div class="over">
-            <p>骚年~~ 你就得了<span class="num" style="color: #ff0c0b;">0</span>分！ 看来手速还得练啊！</p>
-            <img src="img/img.jpg">
-        </div>
-    </div>
-    <div class="cover">
-        <p>Hey bro, Can you capture us?<i></i></p>
+        <div class="cover">
+            <p>Hey bro, Can you capture us?<i></i></p>
 
-        <p class="say">Yo man, Let me look what you have got.<i></i></p>
-    </div>
-</div>
-<!--计时器-->
-<div class="timer">
-    <p>One Minute Challenge：</p>
-
-    <div class="t-minute">
-        <span class="t-txt">01</span>
-    </div>
-    <div class="split">
-        <span>:</span>
-    </div>
-    <div class="t-second">
-        <span class="t-txt">00</span>
-    </div>
-</div>
-<!--开始、暂停、结束操作-->
-<div class="menu">
-    <i class="fa fa-play-circle-o fa-3x" id="start"></i>
-    <i class="fa fa-pause-circle-o fa-3x" id="pause"></i>
-    <i class="fa fa-stop-circle-o fa-3x" id="close"></i>
-</div>
-<!--难度系数条-->
-<div class="tips">
-    <p>快来改变游戏的难度系数，进行挑战吧！</p>
-    <span>（为保证游戏的可玩性，难度系数已最低设置为0.27）</span>
-</div>
-<div class="bar">
-    <div class="circle">
-        <span class="percent">0.27</span>
-    </div>
-    <div class="bg"></div>
-</div>
-<!--显示得分-->
-<div class="score">
-    <i>point:</i>
-    <div class="b1">
-        <div class="b2">
-            <div class="point">0</div>
+            <p class="say">Yo man, Let me look what you have got.<i></i></p>
         </div>
     </div>
+    <!--计时器-->
+    <div class="case">
+        <div class="a"></div>
+        <div class="b">
+            <div class="timer">
+                <p>Timer:</p>
+                <div class="t-minute">
+                    <span class="t-txt">01</span>
+                </div>
+                <div class="split">
+                    <span>:</span>
+                </div>
+                <div class="t-second">
+                    <span class="t-txt">00</span>
+                </div>
+            </div>
+        </div>
+        <div class="c"></div>
+        <div class="d"></div>
+        <div class="e"></div>
+        <div class="f"><i>xufu2506@gmail.com</i></div>
+    </div>
+    <!--开始、暂停、结束操作-->
+    <div class="menu">
+        <i class="fa fa-play-circle-o fa-3x" id="start"></i>
+        <i class="fa fa-pause-circle-o fa-3x" id="pause"></i>
+        <i class="fa fa-stop-circle-o fa-3x" id="close"></i>
+    </div>
+    <!--难度系数条-->
+    <div class="tips">
+        <p>快来改变游戏的难度系数，进行挑战吧！</p>
+        <span>（为保证游戏的可玩性，难度系数已最低设置为0.27）</span>
+    </div>
+    <div class="bar">
+        <div class="circle">
+            <span class="percent">0.27</span>
+        </div>
+        <div class="bg"></div>
+    </div>
+    <!--显示得分-->
+    <div class="score">
+        <i>point:</i>
+        <div class="b1">
+            <div class="b2">
+                <div class="point">0</div>
+            </div>
+        </div>
+    </div>
+    <!--提醒-->
+    <div class="info">
+        请用PC访问
+    </div>
 </div>
-<!--提醒-->
-<div class="info">
-    请用PC访问
-</div>
+
 </body>
 </html>
 <script src="js/jquery-3.2.1.js"></script>
@@ -460,8 +536,17 @@
         $(".menu").fadeIn(2000);
         $(".tips").fadeIn(1800);
         $(".bar").fadeIn(2200);
-        $(".timer").slideDown(2000);
+        $(".case").show();
         $(".score").slideDown(2000);
+        $(".case").css("transform","rotateX(-395deg) rotateY(20deg)")
+    });
+
+    //时钟动画模块
+    $(".case").mouseenter(function(){
+        $(".case").css("transform","");
+    });
+    $(".case").mouseleave(function(){
+        $(".case").css("transform","rotateX(-395deg) rotateY(20deg)");
     });
 
 
