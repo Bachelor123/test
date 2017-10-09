@@ -9,9 +9,27 @@
         body {
             min-width: 1190px;
             overflow: auto;
+            /*background:url("img/bg.jpg") left top no-repeat;*/
+            /*background-size:cover;*/
         }
         p {
             margin: 0;
+        }
+        .body-bg{
+            width: 100%;
+            height: 100%;
+            min-width: 1190px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .body-bg>img{
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
         }
         .container{
             width: 1000px;
@@ -24,6 +42,7 @@
             text-align: center;
             color: #c1c1c1;
             font-style: italic;
+            opacity: 0.5;
         }
         /*游戏页面*/
         .wrap {
@@ -37,9 +56,9 @@
         }
         /*小地鼠出现的区域*/
         .ground {
-            background: linear-gradient(135deg, rgba(56, 53, 49, 0.35) 0, rgba(124, 118, 109, 0.15) 100%);
+            /*background: linear-gradient(135deg, rgba(56, 53, 49, 0.35) 0, rgba(124, 118, 109, 0.15) 100%);*/
             border-radius: 10px;
-            box-shadow: 2px 2px 3px 1px rgba(124, 118, 109, 0.11);
+            /*box-shadow: 2px 2px 3px 1px rgba(124, 118, 109, 0.11);*/
             height: 400px;
             width: 700px;
             overflow: hidden;
@@ -219,7 +238,7 @@
         }
 
         .menu > i {
-            color: rgba(255, 1, 67, 0.31);
+            color: #35CAD8;
             margin: 5px 10px;
             cursor: pointer;
         }
@@ -338,11 +357,12 @@
         /*难度系数条*/
         .tips {
             position: absolute;
-            top: 165px;
+            top: 180px;
             right: -70px;
             width: 200px;
             display: none;
             user-select: none;
+            color: #93fff5;
         }
 
         .tips > p {
@@ -391,6 +411,7 @@
         }
 
         .percent {
+            color: rgb(227, 0, 0);
             width: 40px;
             height: 18px;
             position: absolute;
@@ -402,6 +423,9 @@
     </style>
 </head>
 <body>
+<div class="body-bg">
+    <img class="bg-img" src="img/bg.jpg">
+</div>
 <div class="container">
     <!--庄稼地和田鼠-->
     <div class="wrap">
@@ -452,7 +476,7 @@
     <!--难度系数条-->
     <div class="tips">
         <p>快来改变游戏的难度系数，进行挑战吧！</p>
-        <span>（为保证游戏的可玩性，难度系数已最低设置为0.27）</span>
+        <span>（难度系数已最低设置为0.27）</span>
     </div>
     <div class="bar">
         <div class="circle">
@@ -462,7 +486,7 @@
     </div>
     <!--显示得分-->
     <div class="score">
-        <i>point:</i>
+        <!--<i>point:</i>-->
         <div class="b1">
             <div class="b2">
                 <div class="point">0</div>
@@ -538,7 +562,8 @@
         $(".bar").fadeIn(2200);
         $(".case").show();
         $(".score").slideDown(2000);
-        $(".case").css("transform","rotateX(-395deg) rotateY(20deg)")
+        $(".case").css("transform","rotateX(-395deg) rotateY(20deg)");
+        $(".bg-img").fadeIn(1000);
     });
 
     //时钟动画模块
