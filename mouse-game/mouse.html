@@ -12,38 +12,45 @@
             /*background:url("img/bg.jpg") left top no-repeat;*/
             /*background-size:cover;*/
         }
+
         p {
             margin: 0;
         }
-        .body-bg{
+
+        .body-bg {
             width: 100%;
             height: 100%;
             min-width: 1190px;
             position: absolute;
             top: 0;
             left: 0;
+            user-select: none;
         }
-        .body-bg>img{
+
+        .body-bg > img {
             position: absolute;
-            top:0;
+            top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             display: none;
         }
-        .container{
+
+        .container {
             width: 1000px;
             position: relative;
             margin: 0 auto;
             padding-top: 1px;
         }
-        .info{
+
+        .info {
             margin-top: 60px;
             text-align: center;
             color: #c1c1c1;
             font-style: italic;
             opacity: 0.5;
         }
+
         /*游戏页面*/
         .wrap {
             border-radius: 10px;
@@ -54,6 +61,7 @@
             perspective: 1000px;
             transform-style: preserve-3d;
         }
+
         /*小地鼠出现的区域*/
         .ground {
             /*background: linear-gradient(135deg, rgba(56, 53, 49, 0.35) 0, rgba(124, 118, 109, 0.15) 100%);*/
@@ -68,6 +76,7 @@
             backface-visibility: hidden;
             /*transform-originY:50%;*/
         }
+
         /*游戏开始和结束中间出现的小地鼠*/
         .pic {
             width: 100px;
@@ -76,6 +85,7 @@
             background: url("img/mouse.png") 0 0 no-repeat;
             background-size: 100px 100px;
         }
+
         /*表示结束后弹起的对话框*/
         .over {
             width: 100%;
@@ -90,6 +100,7 @@
             -moz-border-radius: 5px;
             border-radius: 5px;
         }
+
         .over > img {
             position: absolute;
             top: 0;
@@ -265,13 +276,15 @@
             top: 0;
             left: 0;
         }
-            /*长发体两个正方形的面*/
+
+        /*长发体两个正方形的面*/
         .case .c, .case .d {
             width: 80px;
             height: 80px;
             position: absolute;
         }
-           /*搭建一个长发体*/
+
+        /*搭建一个长发体*/
         .a {
             transform: translateZ(-40px);
             background-color: rgba(207, 29, 255, 0.5);
@@ -301,13 +314,15 @@
         .f {
             transform: rotateX(90deg) translateZ(40px);
             background-color: rgba(255, 59, 0, 0.5);
-            color:#FFFFFF;
+            color: #FFFFFF;
         }
-        .f>i{
+
+        .f > i {
             display: inline-block;
             margin-top: 55px;
         }
-            /*长方体里面的时钟*/
+
+        /*长方体里面的时钟*/
         .timer {
             line-height: 80px;
         }
@@ -357,38 +372,50 @@
         /*难度系数条*/
         .tips {
             position: absolute;
-            top: 180px;
+            top: 220px;
             right: -70px;
             width: 200px;
+            height: 100px;
             display: none;
             user-select: none;
             color: #93fff5;
+            /*overflow: hidden;*/
         }
 
         .tips > p {
             margin: 0;
-            font-size: 18px;
+            font-size: 22px;
             font-family: Arial;
             font-weight: 700;
             line-height: 26px;
         }
-
-        .tips > span {
-            font-size: 12px;
-            line-height: 12px;
+        .tips span{
+            /*webkit-gradient(type,x1 y1, x2 y2, from(开始颜色值),to(结束颜色值), [color-stop(偏移量小数,停靠颜色值),...] );*/
+            background-image: -webkit-gradient(linear, 0 50%, right 50%, from(rgb(255, 136, 167)), to(red));
+            /*规定背景的绘制区域为text*/
+            -webkit-background-clip: text;
+            /*文本的填充颜色*/
+            -webkit-text-fill-color: transparent;
         }
-
+        .tips > .easy {
+            font-size: 22px;
+            float: left;
+        }
+        .tips > .hard {
+            font-size: 22px;
+            float: right;
+        }
         .bar {
             display: none;
-            width: 200px;
+            width: 202px;
             height: 10px;
             /*margin: 300px auto;*/
             /*background: rgba(0, 255, 255, 0.38);*/
             border: 1px solid rgb(255, 136, 167);
-            background: #FFFFFF;
+            /*background: #FFFFFF;*/
             position: absolute;
-            top: 300px;
-            right: -70px;
+            top: 65px;
+            /*right: -70px;*/
             border-radius: 9px;
         }
 
@@ -399,15 +426,15 @@
             background: red;
             position: absolute;
             top: -5px;
-            left: 50px;
+            left: -1px;
             cursor: pointer;
         }
 
         .bg {
             height: inherit;
-            width: 55px;
+            width: 5px;
             background: linear-gradient(90deg, rgb(255, 136, 167) 0, red 100%);
-            border-radius: 9px;
+            border-radius: 10px;
         }
 
         .percent {
@@ -415,7 +442,7 @@
             width: 40px;
             height: 18px;
             position: absolute;
-            top: -28px;
+            top: -26px;
             left: -11px;
             line-height: 18px;
             text-align: center;
@@ -451,6 +478,7 @@
         <div class="b">
             <div class="timer">
                 <p>Timer:</p>
+
                 <div class="t-minute">
                     <span class="t-txt">01</span>
                 </div>
@@ -475,15 +503,18 @@
     </div>
     <!--难度系数条-->
     <div class="tips">
-        <p>快来改变游戏的难度系数，进行挑战吧！</p>
-        <span>（难度系数已最低设置为0.27）</span>
-    </div>
-    <div class="bar">
-        <div class="circle">
-            <span class="percent">0.27</span>
+        <!--<p>快来改变游戏的难度系数，进行挑战吧！</p>-->
+        <!--<span>（难度系数已最低设置为0.27）</span>-->
+        <span class="easy">easy</span>
+        <span class="hard">hard</span>
+        <div class="bar">
+            <div class="circle">
+                <span class="percent">0.0</span>
+            </div>
+            <div class="bg"></div>
         </div>
-        <div class="bg"></div>
     </div>
+
     <!--显示得分-->
     <div class="score">
         <!--<i>point:</i>-->
@@ -503,8 +534,9 @@
 </html>
 <script src="js/jquery-3.2.1.js"></script>
 <script>
+    var X = 0;  //X 表示难度系数的值
     var W = 0, H = 0, n = 0;  //n表示打中几次地鼠
-    var cs = 0, cm = 1, flagS = true,flagP = true;  //cs,cm 表示倒计时的秒和分， flag表示 开始、暂停按键的标志位
+    var cs = 0, cm = 1, flagS = true, flagP = true;  //cs,cm 表示倒计时的秒和分， flag表示 开始、暂停按键的标志位
     var T = 1100;  //表示的是难度系数上面的时间
     var TimerMouse = null, TimerClock = null;
     //获取标签名函数
@@ -563,17 +595,17 @@
         $(".bar").fadeIn(2200);
         $(".case").show();
         $(".score").slideDown(2000);
-        $(".case").css("transform","rotateX(-395deg) rotateY(20deg)");
+        $(".case").css("transform", "rotateX(-395deg) rotateY(20deg)");
         $(".bg-img").fadeIn(1000);
         $(".info").hide();
     });
 
     //时钟动画模块
-    $(".case").mouseenter(function(){
-        $(".case").css("transform","");
+    $(".case").mouseenter(function () {
+        $(".case").css("transform", "");
     });
-    $(".case").mouseleave(function(){
-        $(".case").css("transform","rotateX(-395deg) rotateY(20deg)");
+    $(".case").mouseleave(function () {
+        $(".case").css("transform", "rotateX(-395deg) rotateY(20deg)");
     });
 
 
@@ -606,9 +638,14 @@
             $(".mouse").off("click");  //要保证暂停了之后就不能打地鼠了
             up();
         }
+        else{
+            setTimeout(function () {            //没有开始的情况下，暂停按钮按下之后，按钮颜色过会消失
+                $("#pause").css("color", "");
+            }, 100)
+        }
     });
     $("#close").click(function () {
-        if (!flagS||!flagP) {
+        if (!flagS || !flagP) {
             flagS = true;
             flagP = true;
             $('.mouse').clearQueue();   //清除地鼠动画的其余的队列
@@ -672,7 +709,8 @@
                 console.log(T);
             });
         }, T);
-    };
+    }
+    ;
 
 
     //难度系数条
@@ -681,12 +719,12 @@
     var oBg = document.querySelector('.bg');
     var oPer = document.querySelector('.percent');
     oCircle.onmousedown = function () {
-        var X = 0.27;
         document.onmousemove = function (ev) {
             var oEvent = ev || event;
-            var L = oEvent.clientX - oBar.offsetLeft-selector(".container").offsetLeft;
-            if (L <= 50) {
-                L = 50;
+//            L等于鼠标按下的位置的x轴坐标减去进度条的父标签的左边距在减去其父元素的父元素的左边距
+            var L = oEvent.clientX - selector(".tips").offsetLeft - selector(".container").offsetLeft;
+            if (L <= 0) {
+                L = -1;
             }
             else if (L >= oBar.offsetWidth - oCircle.offsetWidth) {
                 L = oBar.offsetWidth - oCircle.offsetWidth;
@@ -694,8 +732,8 @@
             oCircle.style.left = L + 'px';
             oBg.style.width = L + oCircle.offsetWidth + 'px';
             X = oCircle.offsetLeft / (oBar.offsetWidth - oCircle.offsetWidth);
-            oPer.innerText = X.toFixed(2);  //四舍五入保留两位小数
-            T = 1100 - (X.toFixed(2) - 0.27) * 480;
+            oPer.innerText = Math.abs(X).toFixed(1);  //四舍五入保留1位小数(且为正数)
+            T = 1100 - (Math.abs(X).toFixed(1) * 350);
             oEvent.preventDefault();//阻止浏览器默认事件
         };
     };
