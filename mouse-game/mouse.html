@@ -486,7 +486,7 @@
     </div>
     <!--显示得分-->
     <div class="score">
-        <!--<i>point:</i>-->
+        <i>point:</i>
         <div class="b1">
             <div class="b2">
                 <div class="point">0</div>
@@ -535,11 +535,12 @@
             if (cs < 0 && cm == 0) {
                 cs = 0;
                 $('.mouse').clearQueue();
+                $('.mouse').css("display", "none");
                 clearInterval(TimerMouse);
                 $("#start").css("color", "");
                 clearInterval(TimerClock);
-                $('.mouse').css("display", "none");
                 $('.pic').fadeIn(500);
+                $(".mouse").off("click");  //要保证停了之后就不能打地鼠了(解除事件)
                 up();
                 flagS = true;
             }
@@ -618,6 +619,7 @@
             $(".t-second span").text("00");
             $('.mouse').css("display", "none");  //不能用hide，要不然时间上会出现一点小问题
             $('.pic').fadeIn(500);
+            $(".mouse").off("click");  //要保证暂停了之后就不能打地鼠了
             up();
         }
         setTimeout(function () {            //停止按钮按下之后，按钮颜色过会消失
