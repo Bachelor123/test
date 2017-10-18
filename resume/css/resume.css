@@ -232,46 +232,46 @@ a {
 }
 /*设置技能条的绿色占比*/
 .content-hd .skill-level .i-html .in {
-    flex: 7;
-}
-.content-hd .skill-level .i-html .out {
-    flex: 3;
-}
-.content-hd .skill-level .i-css .in {
-    flex: 6.7;
-}
-.content-hd .skill-level .i-css .out {
-    flex: 3.3;
-}
-.content-hd .skill-level .i-js .in {
-    flex: 6;
-}
-.content-hd .skill-level .i-js .out {
-    flex: 4;
-}
-.content-hd .skill-level .i-node .in {
-    flex: 5.3;
-}
-.content-hd .skill-level .i-node .out {
-    flex: 4.7;
-}
-.content-hd .skill-level .i-Bootstrap .in {
     flex: 6.5;
 }
-.content-hd .skill-level .i-Bootstrap .out {
+.content-hd .skill-level .i-html .out {
     flex: 3.5;
 }
-.content-hd .skill-level .i-ng .in {
+.content-hd .skill-level .i-css .in {
+    flex: 6.2;
+}
+.content-hd .skill-level .i-css .out {
+    flex: 3.8;
+}
+.content-hd .skill-level .i-js .in {
     flex: 5.5;
 }
-.content-hd .skill-level .i-ng .out {
+.content-hd .skill-level .i-js .out {
     flex: 4.5;
 }
+.content-hd .skill-level .i-node .in {
+    flex: 4.5;
+}
+.content-hd .skill-level .i-node .out {
+    flex: 5.5;
+}
+.content-hd .skill-level .i-Bootstrap .in {
+    flex: 5.5;
+}
+.content-hd .skill-level .i-Bootstrap .out {
+    flex: 4.5;
+}
+.content-hd .skill-level .i-ng .in {
+    flex: 4.5;
+}
+.content-hd .skill-level .i-ng .out {
+    flex: 5.5;
+}
 .content-hd .skill-level .i-jQuery .in {
-     flex: 6.8;
+     flex: 6.5;
  }
 .content-hd .skill-level .i-jQuery .out {
-    flex: 3.2;
+    flex: 3.5;
 }
 /*当屏幕尺寸小于1024时  技能条隐藏*/
 @media screen and (max-width: 1024px) {
