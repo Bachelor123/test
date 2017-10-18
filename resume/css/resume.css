@@ -1,0 +1,511 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+html {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption, th, td {
+    text-align: left;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+a img {
+    border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    color: #333;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
+    background-color: #eee;
+    overflow: auto;
+    padding-top: 5px;
+}
+@media screen and (max-width: 1024px) {
+    body {
+        padding-top: 0;
+    }
+}
+
+a {
+    text-decoration: none;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+/*主要内容*/
+.content {
+    position: relative;
+    width: 1024px;
+    margin: 50px auto;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 15px #c0c0c0;
+    -webkit-box-shadow: 0 0 15px #c0c0c0;
+    box-shadow: 0 0 15px #c0c0c0;
+    background-color: #fff;
+    overflow: hidden;
+}
+@media screen and (max-width: 1024px) {
+    .content {
+        width: 100%;
+        margin: 0;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+    }
+}
+/*右边栏的*/
+.content-hd {
+    width: 100%;
+    height: inherit;
+    color: #fff;
+    background-color: #eee;
+    overflow: hidden;
+}
+@media screen and (max-width: 720px) {
+    .content-hd {
+        padding: 25px 30px;
+    }
+}
+/*右边栏的头像和名字*/
+.content-hd .title {
+    width: 100%;
+    font-size: 52px;
+    font-weight: 300;
+    overflow: hidden;
+    padding-bottom: 5px;
+    padding-top: 40px;
+}
+@media screen and (max-width: 720px) {
+    .content-hd .title {
+        padding-top: 20px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .content-hd .name,
+    .content-hd .job,
+    .content-hd .info,
+    .content-hd .contact {
+        width: 100%;
+        text-align: center;
+    }
+}
+.content-hd .head-pic {
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 40px;
+    border-radius: 50%;
+}
+@media screen and (max-width: 720px) {
+    .content-hd .head-pic {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+    }
+}
+.content-hd .name {
+    text-align: center;
+    color: #00b38a;
+}
+.content-hd .name h1 {
+    margin-top: 10px;
+    font-family: "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", sans-serif;
+    font-weight: 500;
+    letter-spacing: 5px;
+}
+@media screen and (max-width: 720px) {
+    .content-hd .name h1 {
+        letter-spacing: 0;
+        line-height: 1.25;
+    }
+}
+.content-hd .job {
+    text-align: center;
+    color: #00b38a;
+    font-size: 24px;
+}
+@media screen and (max-width: 720px) {
+    .content-hd .job {
+        margin: 0 auto 0;
+        padding: 10px;
+    }
+}
+
+/*个人信息*/
+.content-hd .info {
+    color: #555;
+    line-height: 30px;
+}
+.content-hd .info h2 {
+    margin: 30px 0 4px;
+    font-size: 18px;
+}
+.content-hd .info h3 {
+    font-size: 16px;
+    margin-top: 10px;
+}
+@media screen and (max-width: 720px) {
+    .content-hd .info h2 {
+        margin-top: 4px;
+    }
+}
+
+/*技术栈，技术水平条*/
+.content-hd .skill-level {
+    padding-top: 40px;
+}
+.content-hd .skill-level h3 {
+    color: #999;
+    margin-left: 5px;
+}
+.content-hd .skill-level .item {
+    display: flex;
+    width: 260px;
+    height: 12px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    background: #d7d7d7;
+}
+.content-hd .skill-level .item .in {
+    background: #00b38a;
+    height: 12px;
+    width: 12px;
+}
+.content-hd .skill-level .item .out {
+    background: #d7d7d7;
+    height: 12px;
+    width: 12px;
+}
+/*设置绿色的左边上下为圆角，灰色的右边上下为圆角*/
+.content-hd .skill-level .item .in:first-child {
+    border-radius: 6px 0 0 6px;
+}
+.content-hd .skill-level .item .out:last-child {
+    border-radius: 0 6px 6px 0;
+}
+/*设置技能条的绿色占比*/
+.content-hd .skill-level .i-html .in {
+    flex: 7;
+}
+.content-hd .skill-level .i-html .out {
+    flex: 3;
+}
+.content-hd .skill-level .i-css .in {
+    flex: 6.7;
+}
+.content-hd .skill-level .i-css .out {
+    flex: 3.3;
+}
+.content-hd .skill-level .i-js .in {
+    flex: 6;
+}
+.content-hd .skill-level .i-js .out {
+    flex: 4;
+}
+.content-hd .skill-level .i-node .in {
+    flex: 5.3;
+}
+.content-hd .skill-level .i-node .out {
+    flex: 4.7;
+}
+.content-hd .skill-level .i-Bootstrap .in {
+    flex: 6.5;
+}
+.content-hd .skill-level .i-Bootstrap .out {
+    flex: 3.5;
+}
+.content-hd .skill-level .i-ng .in {
+    flex: 5.5;
+}
+.content-hd .skill-level .i-ng .out {
+    flex: 4.5;
+}
+.content-hd .skill-level .i-jQuery .in {
+     flex: 6.8;
+ }
+.content-hd .skill-level .i-jQuery .out {
+    flex: 3.2;
+}
+/*当屏幕尺寸小于1024时  技能条隐藏*/
+@media screen and (max-width: 1024px) {
+    .content-hd .skill-level {
+        display: none;
+    }
+}
+
+/*右下角  联系模块*/
+.contact i{
+    color: #00b38a;
+    display: inline-block;
+    width: 20px;
+    height:20px;
+    text-align: center;
+    margin-right: 5px;
+}
+.content-hd .contact {
+    padding-top: 50px;
+}
+@media screen and (max-width: 1024px) {
+    .content-hd .contact {
+        padding-top: 0;
+    }
+}
+.content-hd .contact ul {
+    margin: 8px 0 4px;
+}
+@media screen and (max-width: 1024px) {
+    .content-hd .contact ul {
+        text-align: center;
+        margin: 16px 0 0;
+    }
+}
+.content-hd .contact ul > li {
+    height: 22px;
+    margin-top: 10px;
+}
+@media screen and (max-width: 1024px) {
+    .content-hd .contact ul > li {
+        display: inline-block;
+        margin: 0;
+    }
+}
+.content-hd .contact ul > li > a {
+    color: #555;
+    font-family: "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+}
+.content-hd .contact ul > li > a:hover {
+    color: #999;
+}
+@media screen and (max-width: 1024px) {
+    .content-hd .contact ul > li > a .contact-link {
+        display: none;
+    }
+}
+.content-hd .contact ul > li > a .iconfont {
+    margin-left: 5px;
+}
+@media screen and (max-width: 1024px) {
+    .content-hd .contact ul > li > a .iconfont {
+        font-size: 20px;
+    }
+}
+/*主页面*/
+.content-bd {
+    display: flex;
+    min-height: 200px;
+    flex-flow: row wrap;
+    overflow: hidden;
+}
+/*简历的左半部分*/
+.content-bd .content-left {
+    flex: 6.5;
+    padding: 20px 30px 50px;
+}
+@media screen and (max-width: 1024px) {
+    .content-bd .content-left {
+        flex: 1 100%;
+        order: 2;
+        padding: 20px 10px 50px;
+    }
+}
+/*简历的右半部份*/
+.content-bd .content-right {
+    box-sizing: border-box;
+    padding: 20px 30px 50px;
+    flex: 3.5;
+    background: #eeeeee;
+}
+@media screen and (max-width: 1024px) {
+    .content-bd .content-right {
+        flex: 1 100%;
+        order: 1;
+        padding-bottom: 20px;
+    }
+}
+/*简历左边的一级块的设置*/
+.content-bd section {
+    overflow: hidden;
+    padding: 10px 15px;
+}
+/*四大板块的标题部分的设置*/
+.content-bd .section-hd {
+    position: relative;
+    height: 32px;
+    margin: 10px auto 5px;
+    overflow: hidden;
+}
+/*四大大板块的内容*/
+.content-bd .section-bd {
+    overflow: hidden;
+}
+/*标题旁两边的线条*/
+.content-bd .section-title-l,
+.content-bd .section-title-r {
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: 35%;
+    height: 0;
+    vertical-align: middle;
+    border-top: 1px solid #ededed;
+}
+.content-bd .section-title-l {
+    left: 0;
+}
+.content-bd .section-title-r {
+    right: 0;
+}
+/*四个板块的标题文字*/
+.content-bd .section-title {
+    position: relative;
+    z-index: 1;
+    width: 24%;
+    min-width: 100px;
+    margin: 0 auto;
+    padding: 4px 10px;
+    -moz-border-radius: 32px;
+    -webkit-border-radius: 32px;
+    border-radius: 32px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #eee;
+}
+
+.demo .item{
+    margin-top: 10px;
+}
+.demo .item-hd h3{
+    font-weight: 600;
+}
+.content-bd .item-hd {
+    position: relative;
+    padding: 10px 0 5px;
+    line-height: 20px;
+    overflow: hidden;
+    font-weight: 500;
+}
+.item-hd p{
+    line-height: 22px;
+    text-align: justify;
+    word-break: break-all;
+    text-indent: 30px;
+}
+.item1 h3{
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 5px;
+}
+/*给左边内容里面的ul 和 li增加样式*/
+.item1 ul li{
+    line-height: 22px;
+}
+.item2 ul li{
+    line-height: 25px;
+}
+.item1 ul li i,.item2 ul li i{
+    padding:0 10px;
+    color: #00b38a;
+    font-size: 14px;
+}
+/*link  的按钮*/
+.content-bd .item-hd .item-more {
+    float: right;
+    margin-left: 5px;
+}
+@media screen and (max-width: 720px) {
+    .content-bd .item-hd .item-more {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        margin-top: 1px;
+    }
+}
+
+.content-bd .item-bd {
+    margin-bottom: 5px;
+}
+.content-bd .section-content {
+    text-align: justify;
+    word-break: break-all;
+    line-height: 22px;
+}
+
+
+/*获奖板块*/
+.content-bd .prize .item-hd {
+    padding: 5px 0 0;
+}
+.content-bd .prize .item-time {
+    width: 15%;
+}
+@media screen and (max-width: 720px) {
+    .content-bd .prize .item-time {
+        width: 100%;
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: 0 5px;
+    border: 1px solid #00b38a;
+    border-radius: 3px;
+    color: #00b38a;
+    font-family: Menlo, "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+}
+.btn:hover {
+    color: #fff;
+    background-color: #00b38a;
+}
+
