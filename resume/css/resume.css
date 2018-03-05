@@ -654,9 +654,9 @@ a {
 }
 
 @media screen and (max-width: 720px) {
-    .content-bd .item-hd .item-more {
+    .demo .item-hd .item-more {
         position: absolute;
-        top: 10px;
+        top: -1px;
         right: 0;
         margin-top: 1px;
     }
@@ -681,6 +681,12 @@ a {
 
 .content-bd .prize .item-time {
     width: 15%;
+}
+
+@media screen and (max-width: 450px) {
+    .prize .item-hd {
+        font-size: 12px;
+    }
 }
 
 @media screen and (max-width: 720px) {
