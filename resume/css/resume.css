@@ -223,8 +223,13 @@ a {
 
 @media screen and (max-width: 720px) {
     .content-hd .title {
-        padding-top: 20px;
+        padding-top: 80px;
     }
+}
+
+.mc-tel,
+.mc-mail {
+    display: none;
 }
 
 @media screen and (max-width: 1024px) {
@@ -234,6 +239,10 @@ a {
     .content-hd .contact {
         width: 100%;
         text-align: center;
+    }
+    .mc-tel,
+    .mc-mail {
+        display: block;
     }
 }
 
@@ -247,8 +256,8 @@ a {
 
 @media screen and (max-width: 720px) {
     .content-hd .head-pic {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
         margin-bottom: 20px;
     }
 }
@@ -507,7 +516,7 @@ a {
     .content-bd .content-left {
         flex: 1 100%;
         order: 2;
-        padding: 20px 10px 50px;
+        padding: 20px 10px 35px;
     }
 }
 
@@ -525,6 +534,7 @@ a {
     .content-bd .content-right {
         flex: 1 100%;
         order: 1;
+        height: 100vh;
         padding-bottom: 20px;
     }
 }
