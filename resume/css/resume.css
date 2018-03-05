@@ -223,7 +223,7 @@ a {
 
 @media screen and (max-width: 720px) {
     .content-hd .title {
-        padding-top: 80px;
+        padding-top: 14%;
     }
 }
 
