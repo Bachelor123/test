@@ -423,6 +423,25 @@ a {
 }
 
 
+/* 右下角的二维码 */
+
+.resume-code {
+    width: 120px;
+    height: 120px;
+    border: 2px solid #00b38a;
+    border-radius: 5px;
+    background: url("../img/code.png") center no-repeat;
+    background-size: 100% 100%;
+    margin: 28px 0 0 30px;
+}
+
+@media screen and (max-width: 1024px) {
+    .content-hd .resume-code {
+        display: none;
+    }
+}
+
+
 /*右下角  联系模块*/
 
 .contact i {
@@ -435,7 +454,7 @@ a {
 }
 
 .content-hd .contact {
-    padding-top: 50px;
+    padding-top: 35px;
 }
 
 @media screen and (max-width: 1024px) {
