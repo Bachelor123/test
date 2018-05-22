@@ -390,11 +390,11 @@ a {
 }
 
 .content-hd .skill-level .i-node .in {
-    flex: 4;
+    flex: 5;
 }
 
 .content-hd .skill-level .i-node .out {
-    flex: 6;
+    flex: 5;
 }
 
 .content-hd .skill-level .i-ng .in {
@@ -439,6 +439,12 @@ a {
     .content-hd .resume-code {
         display: none;
     }
+}
+
+.resume-code-font {
+    color: #00b38a;
+    font-size: 14px;
+    padding: 15px 10px 10px 28px !important;
 }
 
 
