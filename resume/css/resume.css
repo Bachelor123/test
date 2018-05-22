@@ -435,17 +435,19 @@ a {
     margin: 28px 0 0 30px;
 }
 
-@media screen and (max-width: 1024px) {
-    .content-hd .resume-code {
-        display: none;
-    }
-}
-
 .resume-code-font {
     color: #00b38a;
     font-size: 14px;
     padding: 15px 10px 10px 28px !important;
 }
+
+@media screen and (max-width: 1024px) {
+    .content-hd .resume-code,.content-hd .resume-code-font {
+        display: none;
+    }
+}
+
+
 
 
 /*右下角  联系模块*/
