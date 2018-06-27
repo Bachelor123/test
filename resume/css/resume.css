@@ -227,6 +227,10 @@ a {
     }
 }
 
+.pc-resume {
+    word-break: break-all;
+}
+
 .mc-tel,
 .mc-mail {
     display: none;
@@ -239,6 +243,9 @@ a {
     .content-hd .contact {
         width: 100%;
         text-align: center;
+    }
+    .pc-resume {
+        display: none;
     }
     .mc-tel,
     .mc-mail {
