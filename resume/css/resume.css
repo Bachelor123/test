@@ -228,6 +228,7 @@ a {
 }
 
 .pc-resume {
+    display: block;
     word-break: break-all;
 }
 
@@ -246,6 +247,7 @@ a {
     }
     .pc-resume {
         display: none;
+        word-break: break-all;        
     }
     .mc-tel,
     .mc-mail {
