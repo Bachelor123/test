@@ -399,19 +399,19 @@ a {
 }
 
 .content-hd .skill-level .i-node .in {
-    flex: 5;
+    flex: 6.5;
 }
 
 .content-hd .skill-level .i-node .out {
-    flex: 5;
-}
-
-.content-hd .skill-level .i-ng .in {
     flex: 4.5;
 }
 
-.content-hd .skill-level .i-ng .out {
+.content-hd .skill-level .i-ng .in {
     flex: 5.5;
+}
+
+.content-hd .skill-level .i-ng .out {
+    flex: 4.5;
 }
 
 .content-hd .skill-level .i-jQuery .in {
